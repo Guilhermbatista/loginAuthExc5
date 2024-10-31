@@ -16,7 +16,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "tb_user")
-public class User implements UserDetails{
+public class User implements UserDetails {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -98,6 +98,10 @@ public class User implements UserDetails{
 
 	public List<Order> getOrders() {
 		return orders;
+	}
+
+	public Set<Role> getRoles() {
+		return roles;
 	}
 
 	public void addRole(Role role) {
